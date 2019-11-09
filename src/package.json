@@ -1,5 +1,7 @@
 {
   "name": "Run_App",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bulma": "^0.8.0"
+  }
 }

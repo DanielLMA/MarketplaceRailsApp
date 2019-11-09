@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+      <header>
+          <%= render "layouts/header" %>
+      </header>
+      <section class="conversations-wrapper">
+      <div class="conversations">
+          <h1>INBOX</h1>
+          <table class="table is-bordered is-narrow"> 
+                  <% @conversations.each do |conversation| %>
+                    <li>
+                      <% if conversation.recipient(current_runner).profile %>
+                      <%=  link_to(conversation.recipient(current_runner).profile.username, conversation_messages_path(conversation))%>
+                    <% else %>
+                    <%=  link_to("NEW USER", conversation_messages_path(conversation))%>
+                    <% end %>
+                      <% if !conversation.unread_message_count(current_runner).zero? %>
+                        (<%= conversation.unread_message_count(current_runner) %>)
+                      <% end %>
+                    </li>
+                  <% end %>
+                </table>
+          
+      </div> 
+      <div class="other-runners">
+          <ul> 
+            <% @runners.each do |runner| %>
+              <% if runner.profile %>
+              <li><%= link_to runner.profile.username, conversations_path(sender_id: current_runner.id, receiver_id: runner.id), method: :post %></li>
+              <% else %>
+              <li><%= link_to runner.email, conversations_path(sender_id: current_runner.id, receiver_id: runner.id), method: :post %></li>
+              <% end %>
+            <% end %>
+          </ul>
+      </div>
+      
+      
+    </section>
+      <footer>    <%= render "layouts/footer" %></footer>
+    
+  </body>
+</html>
+

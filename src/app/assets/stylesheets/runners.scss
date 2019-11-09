@@ -1,0 +1,48 @@
+// Place all the styles related to the runners controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    .edit-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 90vh;
+        justify-content: center;
+        .edit-page-pic {
+            background-image: url(image_path("running_mountains.jpg"));
+            background-size: contain;
+            background-position: center;
+            background-blend-mode: luminosity;
+            background-color: rgba(179, 204, 34, 0.315);
+            background-repeat: no-repeat;
+        }
+        .edit-page-content {
+            align-self: center;
+            justify-self: center;
+            padding: 25px;
+            background-color: rgba(198, 209, 41, 0.911);
+        }
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        .edit-section {
+            background-image: url(image_path("running_mountains.jpg"));
+            background-size: contain;
+            background-position: left;
+            background-repeat: no-repeat;
+            background-blend-mode: luminosity;
+            background-color: rgba(179, 204, 34, 0.315);
+           
+            
+            .edit-page-pic {
+                background-color: transparent;
+            background-image: none;
+
+        }
+    
+}
+}
+}

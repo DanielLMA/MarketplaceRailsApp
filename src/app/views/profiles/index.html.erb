@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <header>
+        <%= render "layouts/header" %>
+    </header>
+    <section class="profile-index-section">
+        <div class="table-container">
+            <div class="search-title">
+                <h1>Search Runners</h1>
+            </div>
+            <div class="table-wrapper">
+                <table class="table is-bordered">
+                    <thead>
+                            <tr>
+                                    <th></th>
+                                    <th class="has-text-centered">Username
+                                         
+                                    </th>
+                                    <th class="has-text-centered">Pace</th>
+                                    <th class="has-text-centered">Gender</th>
+                                    <th class="has-text-centered">Age-Range</th>
+                                    <th class="has-text-centered">Running-Area</th>
+                                    <th></th>
+                                  
+                               
+            
+                                </tr>
+                        <tr>
+                              
+                            <th class="has-text-centered">SEARCH</th>
+                            <%= form_tag('/profiles', method: :get) do |f| %>
+                            <th>                
+                                <%= text_field(:q, :username_eq, value:params[:q][:username_eq]) %></th>
+                            <th>
+                                <%= select(:q, :pace_eq, options_for_select(Profile::TRAINING_PACE_LIST, params[:q][:pace_eq]), {:include_blank => "select"}) %>
+                            </th>
+                            <th>
+                                <%= select(:q, :gender_eq, options_for_select(Profile::GENDER_OPTIONS, params[:q][:gender_eq]), {:include_blank => "select"}) %></th>
+                            <th> 
+                                <%= select(:q, :age_eq, options_for_select(Profile::AGE_RANGE, params[:q][:age_eq]), {include_blank: "Select"}) %>
+                            </th>
+                            <th>
+                                <%= select(:q, :runningregion_eq, options_for_select(Profile::RUNNING_REGION, params[:q][:runningregion_eq]), {include_blank: "Select"}) %>
+                            </th>
+                            <th data-turbolinks="false"> 
+                            <%= submit_tag "Search", class: "button" %>
+                            <%= link_to "Clear All", "/profiles", class: "button"%>
+                            </th>
+                        </tr>
+                    <% end %>
+                    </thead>
+
+                    <tbody>
+                        <% if @profile.present? %>
+                        <% @profile.each do |profile| %>
+                        <tr>
+                            <td class="has-text-centered">
+                                <% if profile.image.attached? %>
+                                <%= (link_to image_tag(profile.image, height: 100, width: 100), profile_path(profile)) %>
+                                <% else %>
+                                <%= (link_to image_tag('upload_picture.png', height: 100, width: 100), profile_path(profile))%>
+                                <% end %></td>
+                            <td class="has-text-centered "><%= profile.username %>
+                                <br>
+                                <% if current_runner.has_role?(:admin)%>
+                                <%= link_to("Delete Profile", delete_profile_url(profile), class: "links") %>
+                                <% end %></td>
+                            <td class="has-text-centered"><%= profile.pace %></td>
+                            <td class="has-text-centered"><%= profile.gender %></td>
+                            <td class="has-text-centered"><%= profile.age %></td>
+                            <td class="has-text-centered"><%= profile.runningregion %></td>
+                            <td> <%= link_to "Chat", "/conversations?receiver_id=#{profile.runner.id}&sender_id=#{current_runner.id}", method: :post %></td>
+                        </tr>
+                    <% end %>
+                    <% else %>
+                        <tr>
+                            <td colspan="8" class= "has-text-centered is-italic">No Runners Found</td>
+                        </tr>
+                        <% end %>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <footer> <%= render "layouts/footer" %></footer>
+</body>
+
+</html>

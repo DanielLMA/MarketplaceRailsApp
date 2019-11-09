@@ -1,0 +1,47 @@
+
+    <body> 
+            <header>
+                <%= render "layouts/header" %>
+            </header>
+        <section>
+            <div class="home-intro-pics">
+                <div id="profile-img">
+                    <%= image_tag("running_forest.jpg", :alt => "running in forest", id: "img1")%>
+                    <div id="overlay1">
+                        <a href="google.com"><h1>PROFILE</h1></a>
+                    </div>
+                </div>
+                <div id="search-img">
+                    <%= image_tag("running_partner.jpg", :alt => "running with partner", id: "img2") %>
+                        <div id="overlay2">
+                                 <a href="google.com"><h1>SEARCH</h1></a>
+                             
+                              </div>
+                </div>
+                <div id="other-img">
+                    <%= image_tag("racers.jpg", :alt => "runners in race", id: "img3" )%>
+                        <div id="overlay3">
+                                 <a href="https://www.runningcalendar.com.au/calendar/running/queensland/brisbane/" target="_blank"><h1>FIND RACES</h1></a>
+                              </div>
+                </div>
+            </div>
+            
+            <div id="other-links">
+                    <div class="boxx">
+                        <div><%= image_tag("add_contact.png", :alt => "add friends", class: "icon") %></div>
+                        <div> <p>Make new Friends</p></div>
+
+                    </div>
+                    <div class="boxx">
+                        <div><%= image_tag("weightlifter.png", :alt => "weight-lifting", class: "icon") %></div>
+                        <div>Improve your fitness level </div>
+                        </div>
+                    <div class="boxx">
+                    <div><%= image_tag("trophy.png", :alt => "trophy", class: "icon") %></div>
+                    <div>Meet your goals!</div>
+                    </div></div>
+            </div>
+    
+        </section>   
+        <footer>    <%= render "layouts/footer" %></footer>
+    </body>

@@ -1,0 +1,21 @@
+
+<%= form_with(model: current_runner) do |f| %>
+
+<%= button_tag "Buy", id: "checkout", type: "button" %>
+<%= f.hidden_field :paid, value: true %>
+<% end %>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  let stripe = Stripe("pk_test_JPhvXEdgLf37Nmiu8QZeQTuQ00UXBFWZ7B");
+  function checkout() {
+    stripe
+      .redirectToCheckout({
+        sessionId: "<%= @session.id %>"
+      })
+      .then(result => alert(result));
+  }
+  document.querySelector("#checkout").addEventListener("click", checkout)
+</script>
+
+

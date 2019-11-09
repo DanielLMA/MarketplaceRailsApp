@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body class="profile-body"> 
+    <header>
+      <%= render "layouts/header" %>
+    </header>
+    <section class="profile-show-background">
+      <div class="field-wrapper">
+        <div class="runner-info-box">
+            <h1>PROFILE</h1>
+            <h3>RUNNER:<%= @profile.username %></h3>
+            <br>
+            <h3>AGE: <%= @profile.age %></h3>
+            <br>
+            <h3>GENDER: <%= @profile.gender %></h3>
+            <br>
+            <h3>PACE: <%= @profile.pace %></h3>
+            <br>
+            <h3>RUNNING-REGION: <%= @profile.runningregion %></h3>
+            <div><% if  @profile.image.attached? %>
+              <%= image_tag @profile.image %> 
+              <% else %>
+              <%= image_tag('upload_picture.png', height: 40)%>
+              <% end %></div>
+            <!-- <h3><%= link_to "Send a Message", "/conversations", class: "button"%></h3> -->
+            <!-- <%= @profile.image.attached? ? image_tag(@profile.image, height: 40) : "" %> -->
+            <h3><%= link_to "Chat", "/conversations?receiver_id=#{@profile.runner.id}&sender_id=#{current_runner.id}", method: :post, class: "button is-size-4 is-fullwidth" %></h3>
+        </div>
+        <div class="runner-info-alt-box">.</div>
+  </div>
+
+
+
+  </section>
+  <footer>    <%= render "layouts/footer" %></footer>
+  </body>
+</html>

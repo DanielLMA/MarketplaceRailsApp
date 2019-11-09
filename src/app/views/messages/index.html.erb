@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html class="no-js"> 
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title></title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="">
+ </head>
+ <body>
+     <header>
+         <%= render "layouts/header" %>
+     </header>
+     <ul>
+         <% @messages.each do |message| %>
+           <% if message.body %>
+             <li>
+               <h4> <%= message.runner.profile.username %><small><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></small></h4>
+                 <% if message.runner.profile.username.nil? %>
+                 <%= "New User" %>
+                 <% end %>
+               </h4>
+               <p><%= message.body %></p>
+               <p></p>
+             </li>
+           <% end %>
+         <% end %>
+       </ul>
+       
+       <%= form_for [@conversation, @message] do |f| %>
+         <div class="field">
+           <%= f.text_area :body, placeholder: "Text" %>
+         </div>
+         <%= f.submit "Send" %>
+       <% end %>
+ 
+       <footer>    <%= render "layouts/footer" %></footer>
+
+ </body>
+
+</html>
+

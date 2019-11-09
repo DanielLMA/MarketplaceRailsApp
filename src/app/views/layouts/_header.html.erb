@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>RunningApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body>
+  <nav class="header">
+    <div class="title">
+      <%= link_to(image_tag("Runnerfy_logo_app.png", :alt => "runnerfy_logo", id: "img1"), root_path) %></div>
+    <div class="links">
+      <ul class="nav-unordered-list">
+        <li>
+          <% if current_runner.present? && current_runner.has_role?(:admin)%>
+          <%= link_to("ADMIN SECTION", profiles_path, class: "links") %>
+          <% end %>
+        </li>
+        <li id="nav-link-0"><%= link_to("MY MESSAGES", conversations_path, class: "links") %></li>
+        <li id="nav-link-1"><%= link_to("SEARCH", profiles_path, class: "links") %></li>
+        <li id="nav-link-2"><%= link_to("ABOUT US", pages_about_us_path, class: "links") %></li>
+        <%if current_runner %>
+        <%if current_runner.profile.present? && current_runner.profile.username.present? %>
+        <li id="nav-link-3" ><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
+      <% else %>
+      <div data-turbolinks="false"><li id="nav-link-3" style="color:blue;"><%= link_to("CREATE PROFILE", edit_runner_path(current_runner), class: "links", :style => "color: light-r" ) %></li></div>
+      <% end %>
+        <li id="nav-link-4"><%= link_to("MY PROFILE", runner_path(current_runner), class: "links") %></li>
+        <li id="nav-link-5"><%= link_to("SIGN OUT", destroy_runner_session_path, method: :delete, class: "links") %></li>
+        <% else %>
+        <li id="nav-link-3"><%= link_to("SIGN IN", new_runner_session_path, class: "links") %></li>
+        <li id="nav-link-4"><%= link_to("SIGN UP", new_runner_registration_path, class: "links") %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <%= yield %>
+</body>
+</html>

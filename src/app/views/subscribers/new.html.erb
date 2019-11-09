@@ -1,0 +1,15 @@
+<h1>new page for subscribers </h1>
+
+<button id="checkout">Checkout Now</button>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  let stripe = Stripe("pk_test_JPhvXEdgLf37Nmiu8QZeQTuQ00UXBFWZ7B");
+  function checkout() {
+    stripe
+      .redirectToCheckout({
+        sessionId: "<%= @session.id %>"
+      })
+      .then(result => alert(result));
+  }
+  document.querySelector("#checkout").addEventListener("click", checkout)
+</script>

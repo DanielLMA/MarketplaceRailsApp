@@ -1,0 +1,36 @@
+<%= form_with(model: runner, local: true) do |f| %>
+
+<%= f.fields_for :profile do |f| %>
+
+<div><strong>PROFILE FIELDS</strong>
+    </div>
+<div>
+    <%= f.label :username %>
+    <%= f.text_field :username, :required => true %>
+</div>
+<div>
+    <%= f.label :age %>
+    <%= f.select :age, Profile::AGE_RANGE %>
+</div>
+<div>
+    <%= f.label :gender %>
+    <%= f.select :gender, Profile::GENDER_OPTIONS %>
+</div>
+<div>
+    <%= f.label :pace %>
+    <%= f.select :pace, Profile::TRAINING_PACE_LIST %>
+</div>
+<div>
+    <%= f.label :runningregion %>
+    <%= f.select :runningregion, Profile::RUNNING_REGION %>
+</div>
+<div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+</div>
+<% end %> 
+<div>
+    <%= f.submit %>
+</div>
+
+<% end %>

@@ -69,3 +69,5 @@ gem "activestorage-cloudinary-service", "~> 0.2.3"
 
 
 gem "devise", "~> 4.7"
+
+gem "stripe", "~> 5.10"

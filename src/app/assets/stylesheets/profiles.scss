@@ -1,0 +1,112 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//! Styling for the Profile Show page
+body {
+    background: rgba(203, 190, 14, 0.199);
+    .profile-show-background {
+      background: rgba(203, 190, 14, 0.199);
+      background-blend-mode: soft-light;
+      background-image: url(image_path("individual_runner.jpg"));
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      color: black;
+      .field-wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 90vh;
+        padding: 20px;
+        .runner-info-box {
+          justify-self: center;
+          align-self: center;
+          padding: 30px;
+          h3 {
+            font-size: 1.5rem;
+          }
+          img {
+            border-style: solid;
+            border-width: 2px;
+            height: 200px;
+          }
+          border-style: solid;
+          border-width: 2px;
+          background: rgb(192, 184, 77);
+        }
+        .actions {
+          background: rgb(203, 190, 14);
+        }
+      }
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 3.5rem;
+        text-align: center;
+      }
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    body {
+      .profile-show-background {
+        background: rgba(203, 190, 14, 0.199);
+        background-blend-mode: soft-light;
+        background-image: url(image_path("runner_long.jpg"));
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        .field-wrapper {
+          .runner-info-box {
+            padding: 25px;
+            h1 {
+              font-size: 2rem;
+            }
+            h3 {
+              font-size: 1rem;
+            }
+            img {
+              border-style: solid;
+              border-width: 2px;
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+  //! index profile search page
+  body {
+    .profile-index-section {
+      height: auto;
+      min-height: 90vh;
+  
+      .table-container {
+   
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 50px;
+        .search-title {
+          background-image: url(image_path("bix_start.jpg"));
+          background-size: cover;
+          height: 250px;
+          display: grid;
+          h1 {
+            justify-self: center;
+            align-self: center;
+            color: black;
+            padding: 5px 20px 5px 20px;
+            background: rgba(203, 190, 14, 0.897);
+            font-size: 5rem;
+          }
+      
+        }
+      .table-wrapper{
+        padding: 50px;
+        justify-self: center;
+        th {background: rgb(175, 174, 163);
+        }
+      }
+      }
+    }
+  }

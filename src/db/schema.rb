@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_09_075648) do
+ActiveRecord::Schema.define(version: 2019_11_09_085250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,24 @@ ActiveRecord::Schema.define(version: 2019_11_09_075648) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "runner_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["runner_id"], name: "index_messages_on_runner_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -68,6 +86,8 @@ ActiveRecord::Schema.define(version: 2019_11_09_075648) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.boolean "paid", default: false
+    t.boolean "subscribed"
+    t.string "stripeid"
     t.index ["email"], name: "index_runners_on_email", unique: true
     t.index ["reset_password_token"], name: "index_runners_on_reset_password_token", unique: true
   end
@@ -81,5 +101,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_075648) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "runners"
   add_foreign_key "profiles", "runners"
 end
