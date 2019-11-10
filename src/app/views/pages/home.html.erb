@@ -7,7 +7,7 @@
             <div id="profile-img">
                 <%= image_tag("running_forest.jpg", :alt => "running in forest", id: "img1")%>
                 <div id="overlay1">
-                    <a href="google.com">
+                    <%= link_to("...", runner_path(current_runner), class: "links") %>
                         <h1>PROFILE</h1>
                     </a>
                 </div>
@@ -15,7 +15,7 @@
             <div id="search-img">
                 <%= image_tag("running_partner.jpg", :alt => "running with partner", id: "img2") %>
                 <div id="overlay2">
-                    <a href="google.com">
+                    <%= link_to("...", profiles_path, class: "links") %>
                         <h1>SEARCH</h1>
                     </a>
 
@@ -41,7 +41,7 @@
             </div>
             <div class="boxx">
                 <div><%= image_tag("weightlifter.png", :alt => "weight-lifting", class: "icon") %></div>
-                <div>Improve your fitness level </div>
+                <div>Improve your fitness </div>
             </div>
             <div class="boxx">
                 <div><%= image_tag("trophy.png", :alt => "trophy", class: "icon") %></div>
