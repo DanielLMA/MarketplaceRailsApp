@@ -5,18 +5,95 @@
 body {
   .conversations-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    background-image: url(image_path("running_login_mobile.jpg"));
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-blend-mode: luminosity;
+    background-color: rgba(179, 204, 34, 0.089);
+    grid-template-rows: 200px 1fr 1fr;
     align-items: center;
-    height: 100vh;
-    .conversations {
-      background: gray;
-      justify-self: center;
-      padding: 50px;
+    justify-content: center;
+    height: 90vh;
+    text-decoration: none;
+    .top-convos-header {
+      text-decoration: none;
+      h1 {
+        font-size: 5rem;
+        color: black;
+        background-color: rgba(179, 204, 34, 0.836);
+        padding: 10px;
+      }
     }
     .other-runners {
-      background: red;
+      h1 {
+        background-color: rgba(179, 204, 34, 0.836);
+        padding: 10px;
+        text-align: center;
+      }
+      background: rgb(0, 0, 0);
       justify-self: center;
+      padding: 30px;
+      width: 500px;
+    }
+    .conversations{
+      background: rgb(0, 0, 0);
+      h1 {
+        background-color: rgba(179, 204, 34, 0.836);
+        padding: 10px;
+        text-align: center;
+      }
+      justify-self: center;
+      align-self: end;
       padding: 50px;
+      width: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    .conversations-wrapper {
+      .top-convos-header {
+        h1 {
+          font-size: 3rem;
+          color: black;
+          background-color: rgba(179, 204, 34, 0.836);
+          padding: 10px;
+        }
+      }
+      .other-runners {
+        padding: 10px;
+        width: 100%;
+      }
+      .conversations{
+        padding: 20px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+body {
+  
+  .runner-message-wrapper {
+    background-image: url(image_path("runner_ready.jpg"));
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    h1 {
+      margin-left: -15px;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    min-height: 50vh;
+    padding: 20px 0px 20px 100px;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    .message-body {
+      background: rgb(124, 124, 124);
+      justify-self: start;
+      border: 3px solid black;
     }
   }
 }

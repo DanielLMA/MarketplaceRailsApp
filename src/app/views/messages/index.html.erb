@@ -14,16 +14,20 @@
   <header>
     <%= render "layouts/header" %>
   </header>
-  <ul>
+
+  <section class="runner-message-wrapper">
+    <div><h1>Message</h1></div>
+    <div class="message-body">
+    <ul>
     <% @messages.each do |message| %>
     <% if message.body %>
     <li>
+      <h4><% if message.runner.profile.username.nil? %></h4>
+          <%= "New User" %>
+          <% end%>
       <h4>
-        <%= message.runner.profile.username %><small><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></small>
+          <%= message.runner.profile.username%>  <small><%=message.created_at.strftime("(%d/%m/%y at %l:%M %p)") %></small>
       </h4>
-      <% if message.runner.profile.username.nil? %>
-      <%= "New User" %>
-      <% end %>
       </h4>
       <p><%= message.body %></p>
       <p></p>
@@ -38,6 +42,9 @@
   </div>
   <%= f.submit "Send" %>
   <% end %>
+  </div>  
+
+</section>
 
   <footer> <%= render "layouts/footer" %></footer>
 

@@ -83,7 +83,7 @@ Github:  An open-source version control system used for tracking and making chan
 
 ##  Models' relationships (active record associations) with each other
 
-The Runner model is the first model that is created when a user clicks "Sign-up" on the site login. From this, the profile is directly created with a "has_one" relationship to the Runner (User). A Runner is then directed to populating their Profile, which has a "belongs_to" association with the Runner. They can attach an image with a "has_one_attached" association. The Runner model also has an association with the Conversations model. A Runner "has_many" conversations, the Conversation model "belongs_to" the Runner. Within the Conversation model, Conversation "has_many" messages; Messages "belongs_to" Conversation and "belongs_to" a specific Runner. 
+The Runner model is the first model that is created when a user clicks "Sign-up" on the site login. From this, the profile is directly created with a "has_one" relationship to the Runner (User). A Runner is then directed to populating their Profile, which has a "belongs_to" association with the Runner. They can attach an image with a "has_one_attached" association. The Runner model also has an association with the Conversations model. A Runner "has_many" conversations, the Conversation model <code>belongs_to<code> the Runner. The uniqueness of this is defined in the model where the uniqueness of the sender is validated via the :sender_id, which is scopped to the :receiver_id Within the Conversation model, Conversation "has_many" messages; Messages "belongs_to" Conversation and "belongs_to" a specific Runner. 
 
 ## Database relations to be implemented in your application
 
@@ -91,7 +91,7 @@ Relations exist between the models created for this application. The Runner (Use
 
 ## Database schema design
 
-(Refer to the ERD above)
+![ERD Marketplace diagram](docs/ERD_Marketplace_App.jpg )
 
 ## Describe the way tasks are allocated and tracked in your project
 
