@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_runner!
-  
+
   def index
     @runners = Runner.where.not(id: current_runner.id)
     @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_runner.id, current_runner.id)
@@ -16,7 +16,8 @@ class ConversationsController < ApplicationController
   end
 
   private
-    def conversation_params
-      params.permit(:sender_id, :receiver_id)
-    end
+
+  def conversation_params
+    params.permit(:sender_id, :receiver_id)
+  end
 end

@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body> 
-            <header>
-                <%= render "layouts/header" %>
-            </header>
 
-<%= render "layouts/header" %>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
 
-<h1>Runners#index</h1>
+<body>
+    <header>
+        <%= render "layouts/header" %>
+    </header>
 
-<%= search_form_for @search do |f| %>
+    <%= render "layouts/header" %>
+
+    <h1>Runners#index</h1>
+
+    <%= search_form_for @search do |f| %>
 
     <%= f.label :email_cont %>
     <%= f.text_field :email_cont %>
 
     <%= f.submit "Search" %>
 
-<% end %>
+    <% end %>
 
-<table>
-    <tr>
-        <th>email</th>
-    </tr>
-<% @runners.each do |runner| %>
-    <tr>
-        <td><%= runner.email %>
-    </tr>
-<% end %> 
-</table>
+    <table>
+        <tr>
+            <th>email</th>
+        </tr>
+        <% @runners.each do |runner| %>
+        <tr>
+            <td><%= runner.email %>
+        </tr>
+        <% end %>
+    </table>
 
 
-<% @runners.each do |runner| %>
+    <% @runners.each do |runner| %>
     <tr>
         <td><%= runner.username %>
     </tr>
-<% end %> 
+    <% end %>
 
-</table>
+    </table>
 
 
 </body>
+
 </html>

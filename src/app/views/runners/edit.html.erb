@@ -1,22 +1,25 @@
 <!DOCTYPE html>
- <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-    <header><%= render "layouts/header" %></header> 
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <header><%= render "layouts/header" %></header>
     <section class="edit-section">
-    <div class="edit-page-pic">
-       
-    </div>
-    <div class="edit-page-content"><%= render 'form', runner: @runner %></div>
-  
+        <div class="edit-page-pic">
+
+        </div>
+        <div class="edit-page-content"><%= render 'form', runner: @runner %></div>
+
     </section>
-    <footer>    <%= render "layouts/footer" %></footer>
-    </body>
+    <footer> <%= render "layouts/footer" %></footer>
+</body>
+
 </html>

@@ -21,7 +21,8 @@ class MessagesController < ApplicationController
   end
 
   private
-    def message_params
-      params.require(:message).permit(:body, :runner_id)
-    end
+
+  def message_params
+    params.require(:message).permit(:body, :runner_id)
+  end
 end

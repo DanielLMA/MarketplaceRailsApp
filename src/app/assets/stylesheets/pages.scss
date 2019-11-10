@@ -3,272 +3,271 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    section {
-      .home-intro-pics {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: space-around;
-        background-color: rgb(255, 255, 255);
-        background-image: url(image_path("brooklyn_bridge.jpg"));
-        background-color: rgba(203, 190, 14, 0.411);
-        background-blend-mode: soft-light;
-        background-size: cover;
-        height: 100vh;
-  
-        #profile-img {
-          justify-self: center;
-          align-self: center;
-          border: 15px solid rgb(209, 212, 27);
-          width: 80%;
-          transition: transform 0.75s;
-          position: relative;
+  section {
+    .home-intro-pics {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: space-around;
+      background-color: rgb(255, 255, 255);
+      background-image: url(image_path("brooklyn_bridge.jpg"));
+      background-color: rgba(203, 190, 14, 0.411);
+      background-blend-mode: soft-light;
+      background-size: cover;
+      height: 100vh;
+
+      #profile-img {
+        justify-self: center;
+        align-self: center;
+        border: 15px solid rgb(209, 212, 27);
+        width: 80%;
+        transition: transform 0.75s;
+        position: relative;
+        #overlay1 {
+          position: absolute;
+          a {
+            text-decoration: none;
+          }
+          h1 {
+            font-size: 0rem;
+            height: 500px;
+          }
+          padding: 3rem;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+        }
+        &:hover {
+          img {
+            filter: blur(1.5px);
+          }
+          transform: scale(1.05);
           #overlay1 {
-            position: absolute;
-            a {
-              text-decoration: none;
-            }
+            display: inline-block;
             h1 {
-              font-size: 0rem;
-              height: 500px;
+              font-size: 6rem;
+              color: white;
             }
-            padding: 3rem;
-            top: 0;
-            left: 0;
-            bottom: 0;
+          }
+          #img1 {
+            display: block;
             width: 100%;
           }
-          &:hover {
-            img {
-              filter: blur(1.5px);
+        }
+      }
+      #search-img {
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        transition: transform 0.75s;
+        position: relative;
+        #overlay2 {
+          position: absolute;
+          a {
+            text-decoration: none;
+          }
+          h1 {
+            font-size: 0rem;
+            height: 500px;
+          }
+          padding: 3rem;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+        }
+        &:hover {
+          img {
+            filter: blur(1.5px);
+          }
+          transform: scale(1.05);
+          #overlay2 {
+            display: inline-block;
+            h1 {
+              font-size: 3rem;
+              color: rgb(20, 20, 20);
             }
-            transform: scale(1.05);
-            #overlay1 {
-              display: inline-block;
-              h1 {
-                font-size: 6rem;
-                color: white;
-              }
+          }
+          #img2 {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+      #other-img {
+        justify-self: center;
+        align-self: center;
+        width: 75%;
+        transition: transform 0.75s;
+        position: relative;
+        #overlay3 {
+          position: absolute;
+          a {
+            text-decoration: none;
+          }
+          h1 {
+            font-size: 0rem;
+            height: 500px;
+          }
+          padding: 3rem;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          color: #fff;
+        }
+        &:hover {
+          img {
+            filter: blur(1.5px);
+          }
+          transform: scale(1.05);
+          #overlay3 {
+            display: inline-block;
+            h1 {
+              font-size: 6rem;
+              color: black;
             }
-            #img1 {
-              display: block;
-              width: 100%;
+          }
+          #img3 {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+    #other-links {
+      background-color: rgb(236, 236, 236);
+      height: 350px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 50px;
+      font-variant: small-caps;
+      font-family: Didot, serif;
+      font-size: 3rem;
+      color: black;
+      div {
+        align-self: center;
+        justify-self: center;
+      }
+      .boxx {
+        display: grid;
+        grid-template-areas:
+          1fr
+          1fr;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 651px) and (max-width: 1200px) {
+  body {
+    section {
+      .home-intro-pics {
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 400px;
+
+        #profile-img {
+          img {
+            height: 400px;
+          }
+          width: 100%;
+          #overlay1 {
+            h1 {
+              font-size: 2rem;
             }
           }
         }
         #search-img {
-          justify-self: center;
-          align-self: center;
-          width: 80%;
-          transition: transform 0.75s;
-          position: relative;
-          #overlay2 {
-            position: absolute;
-            a {
-              text-decoration: none;
-            }
-            h1 {
-              font-size: 0rem;
-              height: 500px;
-            }
-            padding: 3rem;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: #fff;
+          img {
+            height: 400px;
           }
-          &:hover {
-            img {
-              filter: blur(1.5px);
-            }
-            transform: scale(1.05);
-            #overlay2 {
-              display: inline-block;
-              h1 {
-                font-size: 3rem;
-                color: rgb(20, 20, 20);
-              }
-            }
-            #img2 {
-              display: block;
-              width: 100%;
+          width: 100%;
+          #overlay2 {
+            h1 {
+              font-size: 2rem;
             }
           }
         }
         #other-img {
-          justify-self: center;
-          align-self: center;
-          width: 75%;
-          transition: transform 0.75s;
-          position: relative;
+          img {
+            height: 400px;
+          }
+          width: 100%;
           #overlay3 {
-            position: absolute;
-            a {
-              text-decoration: none;
-            }
             h1 {
-              font-size: 0rem;
-              height: 500px;
-            }
-            padding: 3rem;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: #fff;
-          }
-          &:hover {
-            img {
-              filter: blur(1.5px);
-            }
-            transform: scale(1.05);
-            #overlay3 {
-              display: inline-block;
-              h1 {
-                font-size: 6rem;
-                color: black;
-              }
-            }
-            #img3 {
-              display: block;
-              width: 100%;
-            }
-          }
-        }
-      }
-      #other-links {
-        background-color: rgb(236, 236, 236);
-        height: 350px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 50px;
-        font-variant: small-caps;
-        font-family: Didot, serif;
-        font-size: 3rem;
-        color: black;
-        div {
-          align-self: center;
-          justify-self: center;
-        }
-        .boxx {
-          display: grid;
-          grid-template-areas:
-            1fr
-            1fr;
-        }
-      }
-    }
-  }
-  
-  @media only screen and (min-width: 651px) and (max-width: 1200px) {
-    body {
-      section {
-        .home-intro-pics {
-          grid-template-columns: 33% 33% 33%;
-          grid-template-rows: 400px;
-  
-          #profile-img {
-            img {
-              height: 400px;
-            }
-            width: 100%;
-            #overlay1 {
-              h1 {
-                font-size: 2rem;
-              }
-            }
-          }
-          #search-img {
-            img {
-              height: 400px;
-            }
-            width: 100%;
-            #overlay2 {
-              h1 {
-                font-size: 2rem;
-              }
-            }
-          }
-          #other-img {
-            img {
-              height: 400px;
-            }
-            width: 100%;
-            #overlay3 {
-              h1 {
-                font-size: 2rem;
-              }
+              font-size: 2rem;
             }
           }
         }
       }
     }
   }
-  
-  body {
-    section {
-      .about-us-grid {
-        display: grid;
-        grid-template-rows: 1fr 500px 1fr;
-        #about-us-top-pic {
-          background-image: url(image_path("running_assistive.jpg"));
+}
+
+body {
+  section {
+    .about-us-grid {
+      display: grid;
+      grid-template-rows: 1fr 500px 1fr;
+      #about-us-top-pic {
+        background-image: url(image_path("running_assistive.jpg"));
+        height: 70vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        #about-us-top-pic-overlay {
+          color: rgb(203, 190, 14);
+          h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.836);
+            padding: 10px;
+          }
           height: 70vh;
-          background-size: cover;
-          background-repeat: no-repeat;
-          #about-us-top-pic-overlay {
-            color: rgb(203, 190, 14);
-            h1 {
-              font-size: 3.5rem;
-              font-weight: bold;
-              background: rgba(0, 0, 0, 0.836);
-              padding: 10px;
-            }
-            height: 70vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            #about-us-header-text {
-              align-self: center;
-              justify-self: center;
-            }
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          #about-us-header-text {
+            align-self: center;
+            justify-self: center;
           }
         }
-        #about-us-our-mission {
-          display: grid;
-          justify-content: center;
+      }
+      #about-us-our-mission {
+        display: grid;
+        justify-content: center;
+        align-self: center;
+        div {
+          justify-self: center;
+          width: 40%;
+          padding-bottom: 20px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+      #about-us-our-people {
+        background: rgb(228, 228, 228);
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 350px 350px 350px;
+        justify-content: center;
+        grid-gap: 50px;
+        h1 {
+          font-size: 2rem;
+        }
+        #about-us-our-people-header {
+          grid-area: 1 / 1 / 2 / 4;
+          justify-self: center;
           align-self: center;
-          div {
-            justify-self: center;
-            width: 40%;
-            padding-bottom: 20px;
-          }
-          h1 {
-            font-size: 2rem;
-          }
-          h2 {
-            font-size: 1.5rem;
-          }
         }
-        #about-us-our-people {
-          background: rgb(228, 228, 228);
-          display: grid;
-          grid-template-rows: 1fr 1fr 1fr;
-          grid-template-columns: 350px 350px 350px;
-          justify-content: center;
-          grid-gap: 50px;
-          h1 {
-            font-size: 2rem;
-          }
-          #about-us-our-people-header {
-            grid-area: 1 / 1 / 2 / 4;
-            justify-self: center;
-            align-self: center;
-          }
-          div {
-            justify-self: center;
-            align-self: center;
-          }
+        div {
+          justify-self: center;
+          align-self: center;
         }
       }
     }
   }
-  
+}

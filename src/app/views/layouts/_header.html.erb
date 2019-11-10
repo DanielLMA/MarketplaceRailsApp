@@ -28,12 +28,17 @@
         <li id="nav-link-2"><%= link_to("ABOUT US", pages_about_us_path, class: "links") %></li>
         <%if current_runner %>
         <%if current_runner.profile.present? && current_runner.profile.username.present? %>
-        <li id="nav-link-3" ><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
-      <% else %>
-      <div data-turbolinks="false"><li id="nav-link-3" style="color:blue;"><%= link_to("CREATE PROFILE", edit_runner_path(current_runner), class: "links", :style => "color: light-r" ) %></li></div>
-      <% end %>
+        <li id="nav-link-3"><%= link_to("EDIT PROFILE", edit_runner_path(current_runner), class: "links") %></li>
+        <% else %>
+        <div data-turbolinks="false">
+          <li id="nav-link-3" style="color:blue;">
+            <%= link_to("CREATE PROFILE", edit_runner_path(current_runner), class: "links", :style => "color: light-r" ) %>
+          </li>
+        </div>
+        <% end %>
         <li id="nav-link-4"><%= link_to("MY PROFILE", runner_path(current_runner), class: "links") %></li>
-        <li id="nav-link-5"><%= link_to("SIGN OUT", destroy_runner_session_path, method: :delete, class: "links") %></li>
+        <li id="nav-link-5"><%= link_to("SIGN OUT", destroy_runner_session_path, method: :delete, class: "links") %>
+        </li>
         <% else %>
         <li id="nav-link-3"><%= link_to("SIGN IN", new_runner_session_path, class: "links") %></li>
         <li id="nav-link-4"><%= link_to("SIGN UP", new_runner_registration_path, class: "links") %></li>
@@ -43,4 +48,5 @@
   </nav>
   <%= yield %>
 </body>
+
 </html>
