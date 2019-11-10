@@ -38,16 +38,19 @@ Target audience:
 My target audience will be runners in the Brisbane, QLD area. The site will not be restricted to any type of runner. All skill levels are welcome. After an initial test period in the Brisbane area, expansion to other markets will be considered. 
 
 Tech-stack:
--HTML
--Sass / CSS
--Bulma
--JavaScript
--Ruby on Rails
--PostgreSQL
--Heroku
+
+- HTML
+- Sass / CSS
+- Bulma
+- JavaScript
+- Ruby on Rails
+- PostgreSQL
+- Heroku
 
 ## User stories 
 
+![Trello Board](docs/user_stories.png )
+https://trello.com/b/Oj37iks3/marketplace-project
 
 
 ## Wireframes
@@ -81,7 +84,6 @@ Relations exist between the models created for this application. The Runner (Use
 ## R19	Database schema design
 
 (Refer to the ERD above)
-
 
 ## R20	Describe the way tasks are allocated and tracked in your project
 
