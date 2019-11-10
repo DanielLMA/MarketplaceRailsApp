@@ -64,23 +64,23 @@ Tech-stack:
 
 ## Third-party Services 
 
-        Heroku: Container-based cloud Platform as a Service used to deploy, manage, and scale this application. 
-        Stripe: APIs used integrate payment processing into the application for subscription fee/creation of profile. 
-        Cloudinary: Used for storage of uploaded images to a user's profile. 
-        Github:  An open-source version control system used for tracking and making changes to the application. 
+Heroku: Container-based cloud Platform as a Service used to deploy, manage, and scale this application. 
+Stripe: APIs used integrate payment processing into the application for subscription fee/creation of profile. 
+Cloudinary: Used for storage of uploaded images to a user's profile. 
+Github:  An open-source version control system used for tracking and making changes to the application. 
 
 
 ##  Models' relationships (active record associations) with each other
 
-    The Runner model is the first model that is created when a user clicks "Sign-up" on the site login. From this, the profile is directly created with a "has_one" relationship to the Runner (User). A Runner is then directed to populating their Profile, which has a "belongs_to" association with the Runner. They can attach an image with a "has_one_attached" association. The Runner model also has an association with the Conversations model. A Runner "has_many" conversations, the Conversation model "belongs_to" the Runner. Within the Conversation model, Conversation "has_many" messages; Messages "belongs_to" Conversation and "belongs_to" a specific Runner. 
+The Runner model is the first model that is created when a user clicks "Sign-up" on the site login. From this, the profile is directly created with a "has_one" relationship to the Runner (User). A Runner is then directed to populating their Profile, which has a "belongs_to" association with the Runner. They can attach an image with a "has_one_attached" association. The Runner model also has an association with the Conversations model. A Runner "has_many" conversations, the Conversation model "belongs_to" the Runner. Within the Conversation model, Conversation "has_many" messages; Messages "belongs_to" Conversation and "belongs_to" a specific Runner. 
 
 ## Database relations to be implemented in your application
 
-    Relations exist between the models created for this application. The Runner (User) has one Profile, that as a child, has a foreign-key associating it with its parent: Runner. This profile is what is filtered and searched by other Runners. It contains the displaying information while the Runner information is used for the login and authentication process. The Runner is authenticated through devise. A Runner has a Conversation model and these conversations have messages that have foreign keys which connect the message with a runner_id and a conversation_id. 
+Relations exist between the models created for this application. The Runner (User) has one Profile, that as a child, has a foreign-key associating it with its parent: Runner. This profile is what is filtered and searched by other Runners. It contains the displaying information while the Runner information is used for the login and authentication process. The Runner is authenticated through devise. A Runner has a Conversation model and these conversations have messages that have foreign keys which connect the message with a runner_id and a conversation_id. 
 
 ## R19	Database schema design
 
-    (Please refer to the ERD above)
+(Refer to the ERD above)
 
 
 ## R20	Describe the way tasks are allocated and tracked in your project
