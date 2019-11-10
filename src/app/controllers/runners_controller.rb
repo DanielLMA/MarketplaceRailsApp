@@ -64,8 +64,8 @@ class RunnersController < ApplicationController
         currency: 'aud',
         quantity: 1,
       }],
-      success_url: 'http://localhost:3000/runners/complete',
-      cancel_url: 'http://localhost:3000/runners/cancel',
+      success_url: '/runners/complete',
+      cancel_url: '/runners/cancel',
     )
   end
 
