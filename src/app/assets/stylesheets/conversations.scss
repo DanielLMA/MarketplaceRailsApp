@@ -14,7 +14,7 @@ body {
     grid-template-rows: 200px 1fr 1fr;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    min-height: 90vh;
     text-decoration: none;
     .top-convos-header {
       text-decoration: none;
