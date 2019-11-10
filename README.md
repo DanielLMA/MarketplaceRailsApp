@@ -1,10 +1,10 @@
 # Two-sided Marketplace Running App
 
-## R7 Identification of the problem you are trying to solve by building this particular marketplace app.
+## The market this app addresses
 
-The problem that needs solving is that there are plenty of fitness and running applications out there and there are plenty of social media platforms, but there are none that combine both to promote runners meeting who share similar preferences and running skill sets. 
+The market opportunity for this application is that there are plenty of fitness and running applications out there and there are plenty of social media platforms, but there are none that combine both to promote runners meeting who share similar preferences and running skill sets. 
 
-## R8	Why is it a problem that needs solving?
+## Why is it a problem that needs solving?
 
 The problem needs to be solved because, from my experience and the experience many runners I have spoken with, it is difficult for runners to find others who are at their runner level to train with. When two running partners are not on a similar level, one of the two will be running at a slower pace or a shorter distance than they are capabale of. Finding running partners who share a similar fitness level and running preferences is key to growth in the sport. 
 
@@ -89,11 +89,11 @@ The Runner model is the first model that is created when a user clicks "Sign-up"
 
 Relations exist between the models created for this application. The Runner (User) has one Profile, that as a child, has a foreign-key associating it with its parent: Runner. This profile is what is filtered and searched by other Runners. It contains the displaying information while the Runner information is used for the login and authentication process. The Runner is authenticated through devise. A Runner has a Conversation model and these conversations have messages that have foreign keys which connect the message with a runner_id and a conversation_id. 
 
-## R19	Database schema design
+## Database schema design
 
 (Refer to the ERD above)
 
-## R20	Describe the way tasks are allocated and tracked in your project
+## Describe the way tasks are allocated and tracked in your project
 
 Tasks are allocated and tracked within the project soley through Trello. As this project is a one-man team, there is no external delegating or project allocation. On the Trello board, there are different levels of task progress: Do, Doing, Test, Done. Tasks are handled based on dependency and what needs to be done first (e.g. styling of the site can't be done before all functions are set). Progress is also tracked on a personal journal of goals and completions of tasks each day. 
 
