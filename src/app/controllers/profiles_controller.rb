@@ -27,8 +27,6 @@ class ProfilesController < ApplicationController
 
   def delete
     render(:delete)
-    sleep(4.0)
-
     destroy
   end
 

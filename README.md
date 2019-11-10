@@ -1,25 +1,18 @@
-# README
+# Two-sided Marketplace Running App
 
-
-## R7	Identification of the problem you are trying to solve by building this particular marketplace app.
+## R7 Identification of the problem you are trying to solve by building this particular marketplace app.
 
 The problem that needs solving is that there are plenty of fitness and running applications out there and there are plenty of social media platforms, but there are none that combine both to promote runners meeting who share similar preferences and running skill sets. 
-
-    
-
 
 ## R8	Why is it a problem that needs solving?
 
 The problem needs to be solved because, from my experience and the experience many runners I have spoken with, it is difficult for runners to find others who are at their runner level to train with. When two running partners are not on a similar level, one of the two will be running at a slower pace or a shorter distance than they are capabale of. Finding running partners who share a similar fitness level and running preferences is key to growth in the sport. 
 
-## R9	A link (URL) to your deployed app (i.e. website)
+## Links
     
-URLXXXXXXXXXXXXXXXXXXX
+- Deployed site (via Heroku): https://nameless-plains-85241.herokuapp.com/
 
-
-## R10	A link to your GitHub repository (repo).
-
-XXXXXXXXXXXX
+- Github repo: https://github.com/DanielLMA/MarketplaceRailsApp
 
 ## R11	Description of your marketplace app (website), including:
 - Purpose
@@ -32,8 +25,7 @@ Users will
 
 - Sitemap
 
-![Marketplace](docs/marketplace_sitemap.jpg )
-
+![Marketplace](docs/runningapp_sitemap.jpg )
 
 - Screenshots
 
@@ -73,6 +65,15 @@ R15	Explain the different high-level components (abstractions) in your app
         Stripe: APIs used integrate payment processing into the application for subscription fee/creation of profile. 
         Cloudinary: Used for storage of uploaded images to a user's profile. 
         Github:  An open-source version control system used for tracking and making changes to the application. 
+
+    Tech-stack:
+        -HTML
+        -Sass / CSS
+        -Bulma
+        -JavaScript
+        -Ruby on Rails
+        -PostgreSQL
+        -Heroku
         
 
 ## R17	Describe your projects models in terms of the relationships (active record associations) they have with each other
