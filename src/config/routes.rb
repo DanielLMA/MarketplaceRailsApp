@@ -4,9 +4,6 @@ Rails.application.routes.draw do
 
   get "runners/complete"
   get "runners/cancel"
-  resources :subscribers
-
-  # runners_root_path => "runners#edit"
 
   devise_for :runners, controllers: { registrations: "registrations" }
 
@@ -27,4 +24,7 @@ Rails.application.routes.draw do
       get "delete"
     end
   end
+
+  resources :subscribers
+
 end
