@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.new
   end
 
+  #Creating messages in the database based on the current runner and the one receiving the message
   def create
     @message = @conversation.messages.new(message_params)
     @message.runner = current_runner

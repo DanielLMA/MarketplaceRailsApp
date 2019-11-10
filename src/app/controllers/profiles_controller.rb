@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_runner!
 
+  #Calling on the params of specific profile parameters if present to be displayed in the view
   def index
     @profile = Profile.exclude_blank_profiles.where.not(id: current_runner.profile.id)
     if params[:q].present?
@@ -21,6 +22,7 @@ class ProfilesController < ApplicationController
     # @search = Profile.search(params[:q])
   end
 
+    #finding the correct profile to be displayed
   def show
     @profile = Profile.find(params[:id])
   end
@@ -29,7 +31,7 @@ class ProfilesController < ApplicationController
     render(:delete)
     destroy
   end
-
+  #removing a profile from the database (done by the admin)
   def destroy
     @profile = Profile.find(params[:id])
     @profile.destroy
@@ -41,6 +43,7 @@ class ProfilesController < ApplicationController
 
   private
 
+    #currently unused method to allow specific access that could be added to a before action.
   def authorize
     if current_user != @profile.username
       flash[:alert] = "Cannot access this profile"
@@ -48,6 +51,7 @@ class ProfilesController < ApplicationController
     end
   end
 
+    #sanitize parameters 
   def profile_params
     params.require(:profile).permit(:username, :age, :gender, :pace, :image)
   end

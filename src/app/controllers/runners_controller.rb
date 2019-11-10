@@ -14,12 +14,12 @@ class RunnersController < ApplicationController
   #   @runner.build_profile
   #   #Is this okay above? Needed. What do?
   # end
-
+  #causes a redirction if after checking the parameters, is shown that the boolean for paid is not set to true
   def edit
     @runner = Runner.find(params[:id])
     runner_paid
   end
-
+  #if edit is fond and update is valid, will update parameters in the database. 
   def update
     @runner = Runner.find(params[:id])
     respond_to do |format|
@@ -39,7 +39,7 @@ class RunnersController < ApplicationController
     @runner = Runner.find(params[:id])
     destroy
   end
-
+  #removes runner profile and associated children from the database (through dependent destroys)
   def destroy
     @runner = Runner.find(params[:id])
     @runner.destroy
@@ -69,6 +69,7 @@ class RunnersController < ApplicationController
     )
   end
 
+  #adds a true to the paid boolean in the parameters of the runner
   def complete
     @runner = current_runner
     @runner.update_attributes(paid: true)

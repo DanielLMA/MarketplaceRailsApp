@@ -1,8 +1,22 @@
+
+ <header><%= render "layouts/header" %></header>
+<div class="buy-form">
+  <div class="buy-title"><h1>Purchase your Runnery Life-time Subscription today for only $10.00!</h1></div>
+  <div class="buy-table-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate architecto iste neque laudantium delectus? Harum sint soluta optio recusandae iure exercitationem ducimus fugit? Ipsa saepe aut consequuntur deserunt dolor quas, modi natus adipisci. Ducimus ipsum vero quasi commodi placeat iusto alias at nisi in, illum id dicta odio delectus ad quis, amet et. Dolor nemo dignissimos reiciendis sunt odit esse aliquid rerum recusandae ratione debitis commodi veritatis quis porro tenetur alias nesciunt officiis maxime cumque, natus necessitatibus facere assumenda! Minima doloribus ipsum fugit. Repellat excepturi cumque a nihil dicta. Similique, id! Inventore voluptate fugit necessitatibus accusantium doloremque explicabo sint quae!</div>
+  <div class="button=wrap">
 <%= form_with(model: current_runner) do |f| %>
 
-<%= button_tag "Buy", id: "checkout", type: "button" %>
+<%= button_tag "Purchase", id: "checkout", type: "button", class: "button is-success v-centered" %>
 <%= f.hidden_field :paid, value: true %>
 <% end %>
+</div>
+</div>
+
+<footer> <%= render "layouts/footer" %></footer>
+
+
+
+
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>

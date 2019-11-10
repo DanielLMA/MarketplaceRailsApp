@@ -109,3 +109,23 @@ body {
     }
   }
 }
+
+
+body {
+  .buy-form {
+    min-height: 80vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+
+    div {
+      
+      h1 {
+        font-size: 2rem;
+        
+      }
+      padding: 0px 100px 0px 100px;
+      justify-self: center;
+    }
+  }
+}
