@@ -3,21 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    
-    .conversations-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            height: 100vh;
-        .conversations {
-            background: gray;
-            justify-self: center;
-            padding: 50px;
-        }
-        .other-runners {
-            background: red;
-            justify-self: center;
-            padding: 50px;
-        }
+  .conversations-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100vh;
+    .conversations {
+      background: gray;
+      justify-self: center;
+      padding: 50px;
     }
+    .other-runners {
+      background: red;
+      justify-self: center;
+      padding: 50px;
+    }
+  }
 }
