@@ -30,12 +30,15 @@ Users will
 
 ### Screenshots:
 
+#### Login page
 ![login page](docs/login_page.png )
-### Login page
+
+#### Search page
 ![search page](docs/search_runners.png )
-### Search page
+
+#### Edit Profile page
 ![edit profile](docs/edit_screen.png )
-### Edit Profile page
+
 
 ### Target audience:
 
@@ -59,7 +62,8 @@ https://trello.com/b/Oj37iks3/marketplace-project
 
 ## Wireframes
 
-
+#### Desktop 
+![desktop wireframes](docs/desktop_wireframes.jpg )
 
 ## ERD
 
