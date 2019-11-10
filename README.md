@@ -16,28 +16,32 @@ The problem needs to be solved because, from my experience and the experience ma
 
 ## Description:
 
-Purpose:
+### Purpose:
 
 The purpose of Runnerfy is to help runners find running partners based on their specified needs. It is not hard to find others who do run, but to match one's skill level and preferances (e.g. preferred running pace, location, distance, time of day, frequency) is a difficult task. Just as in any other sport, one's best means of improving skill level is to train with others at a similar level. 
 
-Functionality / features:
+### Functionality / features:
 
 Users will 
 
-Sitemap:
+### Sitemap:
 
 ![Marketplace sitemap](docs/runningapp_sitemap.jpg )
 
-Screenshots:
+### Screenshots:
 
+![login page](docs/login_page.png )
+### Login page
+![search page](docs/search_runners.png )
+### Search page
+![edit profile](docs/edit_screen.png )
+### Edit Profile page
 
-
-
-Target audience:
+### Target audience:
 
 My target audience will be runners in the Brisbane, QLD area. The site will not be restricted to any type of runner. All skill levels are welcome. After an initial test period in the Brisbane area, expansion to other markets will be considered. 
 
-Tech-stack:
+### Tech-stack:
 
 - HTML
 - Sass / CSS

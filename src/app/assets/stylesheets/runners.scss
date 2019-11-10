@@ -6,7 +6,7 @@ body {
     .edit-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        height: 90vh;
+        height: 80vh;
         justify-content: center;
         .edit-page-pic {
             background-image: url(image_path("running_mountains.jpg"));
